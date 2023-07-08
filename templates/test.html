@@ -1,0 +1,29 @@
+<br>
+<hr>
+
+<h1>recent_articles</h1>
+{% for article in recent_articles[:5] %}
+    <h3>{{article.headline}}</h3>
+    <h4>primary_tag: {{ article.primary_tag }}</h4>
+    <h4><a href="{{ url_for('blog_list_topic_view', topic_slug=article.primary_tag_slug) }}">primary_tag_slug: {{ article.primary_tag_slug }}</a></h4>
+{% endfor %}
+
+<h4>Testing Individual Project</h4>
+<h4>{{ recent_articles[0].summary }}</h4>
+
+<br>
+<hr>
+
+
+<h1>featured_articles</h1>
+{% for article in featured_articles[:5] %}
+    <h3>{{article.headline}}</h3>
+{% endfor %}
+
+<h4>Testing Individual Project</h4>
+<h4>{{ featured_articles[0].summary }}</h4>
+
+<h1>topic_dict</h1>
+{% for key, value in topic_dict.items() %}
+    <h3>{{key}} : {{ value }}</h3>
+{% endfor %}

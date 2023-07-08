@@ -1,0 +1,42 @@
+   <header class="header">
+      <div class="wrapper">
+         <div class="header_top">
+            <div class="header_cols">
+
+                <div>
+                    <a href="{{ url_for('index') }}" class="header_logo logo" title=""><img data-src="https://www.freelogodesign.org/assets/img/logo-couleurs.jpeg"
+                                                                src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+                                                                class="js-img" alt=""/></a>
+                </div>
+
+            </div>
+         </div>
+         <div class="header_mid">
+
+            <ul class="header_nav">
+                <li><div class="header_categ">
+                  <a href="#" class="header_categ_opener">
+                     <img src="{{ url_for('static', filename='svg/grid.svg') }}" alt="-">
+                     <span>All Topics</span>
+                  </a>
+                  <div class="header_categ_drop">
+                     <ul class="catlist">
+                        {% for key, value in topic_dict.items() %}
+                        <li><a href="{{ url_for('blog_list_topic_view', topic_slug=key) }}">{{ value }}</a></li>
+                    {% endfor %}
+
+                     </ul>
+                  </div>
+               </div></li>
+{#               <li><a href="{{ url_for('blog_list_recent_view') }}" class="js-local">Recent Articles</a></li>#}
+               <!--<li><a href="#popular" class="js-local">popular</a></li>
+               <li><a href="#mostreaded" class="js-local">Most read</a></li>
+               <li><a href="#hot" class="js-local">Hot stuff</a></li>
+               <li><a href="#top" class="js-local">top of the week</a></li>-->
+{#               <li><a href="{{ url_for('blog_list_popular_view') }}" class="">Popular Articles</a></li>#}
+            </ul>
+            <a href="#" class="button-nav"><span></span></a>
+         </div>
+         <div class="navoverlay"></div>
+      </div>
+   </header>

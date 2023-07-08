@@ -1,0 +1,113 @@
+/*This CSS File overrides the style.css to ensure consistent theme application*/
+
+.section_title h2 {
+    color: var(--primary_theme_color);
+}
+
+.article_txt h1 {
+    color: var(--primary_theme_color);
+}
+
+.footer_title {
+    color: var(--primary_theme_color);
+}
+
+.columns_sidebar h3 {
+    color:var(--primary_theme_color);
+}
+
+a:hover {
+    color: var(--primary_theme_color);
+}
+
+.header_categ_opener:hover, .header_categ_opener.active {
+      color: var(--primary_theme_color);
+}
+
+.footer_list li a:hover {
+        color: var(--primary_theme_color);
+}
+
+.footer_links a:hover {
+        color: var(--primary_theme_color);
+}
+
+.soc_item a:hover .soc_item_icon {
+  background: var(--primary_theme_color);
+}
+
+h1 a:hover, .h1 a:hover {
+  color: var(--primary_theme_color);
+}
+
+h2 a:hover, .h2 a:hover {
+  color: var(--primary_theme_color);
+}
+
+h3 a:hover, .h3 a:hover {
+  color: var(--primary_theme_color);
+}
+
+.btn {
+    box-shadow: 2px 6px 10px rgba(50, 50, 50, 0.15);
+    background: var(--primary_theme_color);
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary_theme_color);
+}
+
+.infoline a:hover {
+  color: var(--primary_theme_color);
+}
+
+.stories_item_title a:hover {
+  color: var(--primary_theme_color);
+}
+
+/*This is the sidebar recent titles*/
+.popular_item_title a:hover {
+  color: var(--primary_theme_color);
+}
+
+.article_tags a:hover {
+  color: var(--primary_theme_color);
+}
+
+.recent_item_title a:hover {
+  color: var(--primary_theme_color);
+}
+
+.btn-arr:hover {
+  color: #fff;
+  background: var(--primary_theme_color);
+  box-shadow: 2px 6px 10px rgba(50, 50, 50, 0.15);
+}
+
+.popular_main_title a:hover {
+  color: var(--primary_theme_color);
+}
+
+.readed_item_title a:hover {
+  color: var(--primary_theme_color);
+}
+
+.catlist li a:hover {
+  color: var(--primary_theme_color);
+}
+
+.topof_item_title a:hover {
+  color: var(--primary_theme_color);
+}
+
+.link-view span {
+  color: var(--primary_theme_color);
+}
+
+.link-view:hover {
+  color: var(--primary_theme_color);
+}
+
+.pages_item:hover .pages_item_title {
+  color: var(--primary_theme_color);
+}

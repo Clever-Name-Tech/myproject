@@ -1,0 +1,21 @@
+         <!---  BEGIN INDEX-SIDEBAR    --->
+                  <aside class="columns_sidebar sidebar">
+                     <div class="sidebar_search">
+                        <form action="{{ url_for('blog_list_search_view', search_term='') }}" method="GET">
+                            <div class="search">
+                                <input type="text" name="search_term" class="form-control" placeholder="Search...">
+                                <button type="submit" class="btn"><i class="material-icons">search</i></button>
+                            </div>
+                        </form>
+                     </div>
+                     <h3>All Topics</h3>
+                     <div class="sidebar_widget">
+                        <ul class="catlist">
+                            {% for key, value in topic_dict.items() %}
+                                <li><a href="{{ url_for('blog_list_topic_view', topic_slug=key) }}">{{ value }}</a></li>
+                            {% endfor %}
+
+                        </ul>
+                     </div>
+                  </aside>
+                  <!---  END INDEX-SIDEBAR    --->

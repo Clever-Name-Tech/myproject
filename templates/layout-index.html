@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    {% block title %}
+    {% endblock %}
+   <title>Clever-Name</title>
+   <meta name='description' content=""/>
+   <meta name="keywords" content=""/>
+   <link rel="icon" type="image/x-icon" href="../static/favicon.ico"/>
+   <link rel="stylesheet" type="text/css" href="../static/css/style.css" class="styles"/>
+   <link rel="stylesheet" type="text/css" href="../static/css/theme.css" class="styles"/>
+    {% block extra_stylesheets %}
+    {% endblock %}
+      <style>
+        :root {
+          --primary_theme_color: {{ primary_theme_color }};
+          --secondary_theme_color: {{ secondary_theme_color }};
+            --primary_theme_color_rgb: {{ primary_theme_color_rgb }};
+          --secondary_theme_color_rgb: {{ secondary_theme_color_rgb }};
+            --primary_theme_color_rgba: {{ primary_theme_color_rgba }};
+          --secondary_theme_color_rgba: {{ secondary_theme_color_rgba }};
+        }
+      </style>
+</head>
+<body class="loaded">
+<!-- BEGIN BODY -->
+<div class="main-wrapper">
+   <!-- BEGIN CONTENT -->
+   <main class="content">
+       {% block content %}
+       {% endblock %}
+   </main>
+   <!-- CONTENT END   -->
+   <!-- BEGIN HEADER -->
+        {% include 'header.html' %}
+   <!-- HEADER END   -->
+   <!-- BEGIN FOOTER -->
+        {% include 'footer.html' %}
+   <!-- FOOTER END   -->
+   <div class="overlay"></div>
+</div>
+<!-- BODY END   -->
+
+    {% include 'scripts.html' %}
+</body>
+</html>

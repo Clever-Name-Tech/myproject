@@ -1,0 +1,61 @@
+      <div class="section-welcome">
+         <!---  BEGIN CONTENT FEATURED ITEMS    --->
+         <div class="welcome_slider js-welcome_slider">
+            <!---  BEGIN FEATURED 1st ITEM    --->
+            <div class="welcome_slider_item"><a href="{{ url_for('blog_details', id=featured_articles[0].id, title=featured_articles[0].slug) }}" class="cover_link"></a>
+               <div class="welcome_slider_img"><img src="{{ featured_articles[0].img_url_1 }}" alt=""/></div>  {# Todo: add the img url here #}
+               <div class="welcome_slider_cont">
+                  <div class="welcome_slider_cats cats">
+                     <a href="{{ url_for('blog_list_topic_view', topic_slug=featured_articles[0].primary_tag_slug) }}" class="cats_item">{{ featured_articles[0].primary_tag }}</a>
+                  </div>
+                  <div class="welcome_slider_title h4"><a href="{{ url_for('blog_details', id=featured_articles[0].id, title=featured_articles[0].slug) }}">{{ featured_articles[0].headline }}</a></div>
+                  <div class="welcome_slider_infoline infoline">
+                     <div class="infoline_date">{{ featured_articles[0].created_date }}</div>
+                     <span class="dash"></span>
+                     <div class="infoline_author">
+                        <div class="ava m-0">
+                           <svg width="10" height="13" viewBox="0 0 10 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.17912 6.01855C8.56265 4.9948 9.5 3.02755 9.5 0.768555C9.5 0.514305 9.48779 0.264555 9.46528 0.0185547H0.534718C0.511425 0.267629 0.499835 0.518003 0.500002 0.768555C0.500002 3.02755 1.43671 4.9948 2.82024 6.01855C1.43671 7.0423 0.500002 9.00955 0.500002 11.2686C0.500002 11.5228 0.512217 11.7726 0.534718 12.0186H9.46528C9.48843 11.7726 9.5 11.5228 9.5 11.2686C9.5 9.00955 8.56265 7.0423 7.17912 6.01855ZM1.46371 11.2686C1.46371 9.0778 2.26927 7.2208 3.71387 6.60806V5.42905C2.26927 4.8163 1.46371 2.95855 1.46371 0.768555H8.53565C8.53565 2.9593 7.73009 4.8163 6.28549 5.42905V6.60806C7.73009 7.2208 8.53565 9.07855 8.53565 11.2686H1.46371ZM6.08104 7.86505C5.36099 7.3888 5.32177 6.7708 5.32113 6.3958V5.6428C5.32113 5.2678 5.35906 4.64755 6.08233 4.17055C6.46936 3.9088 6.80367 3.51055 7.05697 3.0178H2.94239C3.19634 3.51055 3.53129 3.9088 3.91832 4.1713C4.63837 4.64755 4.67759 5.26555 4.67823 5.64055V6.39355C4.67823 6.76855 4.6403 7.3888 3.91703 7.8658C3.18734 8.36005 2.64408 9.3388 2.4795 10.5186H7.51922C7.35463 9.33805 6.81074 8.3593 6.0804 7.86505H6.08104Z"
+                                    fill="#555555"/>
+                           </svg>
+                        </div>
+                        {{ featured_articles[0].read_time }} MIN READ
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            {% for article in featured_articles[1:9] %}
+            <!---  BEGIN FEATURED IND ITEM    --->
+            <div class="welcome_slider_item slick-slide"><a href="{{ url_for('blog_details', id=article.id, title=article.slug) }}" class="cover_link"></a>
+               <div class="welcome_slider_img"><img src="{{ article.img_url_1 }}" alt=""/></div>
+               <div class="welcome_slider_cont">
+                  <div class="welcome_slider_cats cats">
+                     <a href="{{ url_for('blog_list_topic_view', topic_slug=article.primary_tag_slug) }}" class="cats_item">{{ article.primary_tag }}</a>
+                  </div>
+                  <div class="welcome_slider_title h4"><a href="{{ url_for('blog_details', id=article.id, title=article.slug) }}">{{ article.headline }}</a></div>
+                  <div class="welcome_slider_infoline infoline">
+                     <div class="infoline_date">{{ article.created_date }}</div>
+                     <span class="dash"></span>
+                     <div class="infoline_author">
+                        <div class="ava m-0">
+                           <svg width="10" height="13" viewBox="0 0 10 13" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                              <path d="M7.17912 6.01855C8.56265 4.9948 9.5 3.02755 9.5 0.768555C9.5 0.514305 9.48779 0.264555 9.46528 0.0185547H0.534718C0.511425 0.267629 0.499835 0.518003 0.500002 0.768555C0.500002 3.02755 1.43671 4.9948 2.82024 6.01855C1.43671 7.0423 0.500002 9.00955 0.500002 11.2686C0.500002 11.5228 0.512217 11.7726 0.534718 12.0186H9.46528C9.48843 11.7726 9.5 11.5228 9.5 11.2686C9.5 9.00955 8.56265 7.0423 7.17912 6.01855ZM1.46371 11.2686C1.46371 9.0778 2.26927 7.2208 3.71387 6.60806V5.42905C2.26927 4.8163 1.46371 2.95855 1.46371 0.768555H8.53565C8.53565 2.9593 7.73009 4.8163 6.28549 5.42905V6.60806C7.73009 7.2208 8.53565 9.07855 8.53565 11.2686H1.46371ZM6.08104 7.86505C5.36099 7.3888 5.32177 6.7708 5.32113 6.3958V5.6428C5.32113 5.2678 5.35906 4.64755 6.08233 4.17055C6.46936 3.9088 6.80367 3.51055 7.05697 3.0178H2.94239C3.19634 3.51055 3.53129 3.9088 3.91832 4.1713C4.63837 4.64755 4.67759 5.26555 4.67823 5.64055V6.39355C4.67823 6.76855 4.6403 7.3888 3.91703 7.8658C3.18734 8.36005 2.64408 9.3388 2.4795 10.5186H7.51922C7.35463 9.33805 6.81074 8.3593 6.0804 7.86505H6.08104Z"
+                                    fill="#555555"/>
+                           </svg>
+                        </div>
+                        {{ article.read_time }} Min Read
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!---  END FEATURED IND ITEM    --->
+            {% endfor %}
+
+
+
+         </div>
+         <!---  END CONTENT FEATURED ITEMS    --->
+      </div>

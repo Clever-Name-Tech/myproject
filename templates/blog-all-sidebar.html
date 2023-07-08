@@ -1,0 +1,43 @@
+                  <aside class="columns_sidebar sidebar">
+                     <div class="sidebar_search">
+                        <form action="{{ url_for('blog_list_search_view', search_term='') }}" method="GET">
+                            <div class="search">
+                                <input type="text" name="search_term" class="form-control" placeholder="Search...">
+                                <button type="submit" class="btn"><i class="material-icons">search</i></button>
+                            </div>
+                        </form>
+
+
+                     </div>
+
+                     <div class="sidebar_widget">
+                        <h3>Recent posts</h3>
+                                 <!---  BEGIN SIDEBAR RECENT ITEMS    --->
+                        <div class="popular">
+                            {% for article in recent_articles[:5] %}
+                           <div class="popular_item">
+                              <div class="popular_item_img">
+                                  <a href="{{ url_for('blog_details', id=article.id, title=article.slug) }}"><img src="{{ article.img_url_1 }}" alt=""/></a>
+                              </div>
+                              <div class="popular_item_cont">
+                                 <div class="popular_item_title"><a href="{{ url_for('blog_details', id=article.id, title=article.slug) }}">{{ article.headline }}</a></div>
+                                 <div class="popular_item_infoline infoline">
+                                    <div class="infoline_date">{{ article.created_date.strftime('%b %d') }}</div>
+                                    <span class="dash"></span>
+                                    <div class="infoline_tag"><span class="icon-comm"></span>{{ article.read_time }} Min</div>
+                                 </div>
+                              </div>
+                           </div>
+                            {% endfor %}
+                        </div>
+                     </div>
+
+                     <h3>All Topics</h3>
+                     <div class="sidebar_widget">
+                        <ul class="catlist">
+                            {% for key, value in topic_dict.items() %}
+                                <li><a href="{{ url_for('blog_list_topic_view', topic_slug=key) }}">{{ value }}</a></li>
+                            {% endfor %}
+                        </ul>
+                     </div>
+                  </aside>

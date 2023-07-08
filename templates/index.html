@@ -1,0 +1,28 @@
+{% extends 'layout-index.html' %}
+
+ {% block title %}
+   <title>Clever-Name</title>
+ {% endblock %}
+
+
+{% block content %}
+
+{% include 'index-featured.html' %}
+      <section class="section-stories">
+         <div class="wrapper">
+            <div id="recent" class="recent_wrap">
+         <!---  BEGIN CONTENT RECENT ITEMS    --->
+               <div class="columns">
+                   {% include 'index-recent.html' %}
+                    <!---  BEGIN INDEX-SIDEBAR    --->
+                   {% include 'index-sidebar.html' %}
+                    <!---  END INDEX-SIDEBAR    --->
+
+               </div>
+            </div>
+         </div>
+      </section>
+      <!---  BEGIN INDEX POPULAR    --->
+      {% include 'index-recommended.html' %}
+      <!---  END INDEX POPULAR    --->
+{% endblock %}
